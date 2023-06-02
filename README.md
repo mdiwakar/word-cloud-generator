@@ -7,6 +7,10 @@ Star this repo if you like the class!
 ## Notice
 This project is a a sample app for a class on Continuous Delivery at LinkedIn Learning. You can see the class as well as other classes I have available at https://www.linkedin.com/learning/instructors/james-wickett. Thanks!
 
+## Added comment by Milind
+
+
+
 ## Prerequisites
 1. Install go - https://golang.org/doc/install (Start learning go with the tour - http://tour.golang.org/)
 2. Set $GOPATH `export GOPATH="${HOME}/go"`
