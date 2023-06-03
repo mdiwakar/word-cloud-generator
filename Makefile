@@ -44,22 +44,22 @@ docker-build: docker-build-mac docker-build-amd
 
 docker-build-mac: build
 	@echo "Creating the docker on alpine linux for mac (linux/arm64) host"
-	docker build -f ./Dockerfile -t wickett/word-cloud-generator:$(ver)-arm64 -t wickett/word-cloud-generator:latest-arm64 .
+	docker build -f ./Dockerfile -t mdiwakar/word-cloud-generator:$(ver)-arm64 -t mdiwakar/word-cloud-generator:latest-arm64 .
 
 docker-build-amd: getver build
 	@echo "Creating the docker on alpine linux for linux/amd64 host"
-	docker buildx build --load --platform linux/amd64 -f ./Dockerfile -t wickett/word-cloud-generator:$(ver)-amd64 -t wickett/word-cloud-generator:latest-amd64 .
+	docker buildx build --load --platform linux/amd64 -f ./Dockerfile -t mdiwakar/word-cloud-generator:$(ver)-amd64 -t mdiwakar/word-cloud-generator:latest-amd64 .
 
 docker-run:
 	@echo "Starting new container of word-cloud-generator listening on localhost:8888"
-	docker run -it --rm -p 8888:8888 wickett/word-cloud-generator:latest-arm64
+	docker run -it --rm -p 8888:8888 mdiwakar/word-cloud-generator:latest-arm64
 
 docker-push:
 	@echo "Pushing docker image to dockerhub"
-	docker push wickett/word-cloud-generator:$(ver)-amd64
-	docker push wickett/word-cloud-generator:latest-amd64
-	docker push wickett/word-cloud-generator:$(ver)-arm64
-	docker push wickett/word-cloud-generator:latest-arm64
+	docker push mdiwakar/word-cloud-generator:$(ver)-amd64
+	docker push mdiwakar/word-cloud-generator:latest-amd64
+	docker push mdiwakar/word-cloud-generator:$(ver)-arm64
+	docker push mdiwakar/word-cloud-generator:latest-arm64
 
 clean:
 	@echo "Cleaning up previous builds"

@@ -69,8 +69,9 @@ func main() {
 	staticFs := http.FileServer(getStaticFiles())
 
 	mux := http.NewServeMux()
-	the_answer:=42
-	fmt.Printf("The answer is %s\n" the_answer)
+	// uncomment the following lines to see how commit hooks work and blocksyou from commiting broken code/tests
+	//the_answer:=42
+	//fmt.Printf("The answer is %s\n" the_answer)
 
 	// routes
 	mux.HandleFunc("/api", receiveJSONHandler)
